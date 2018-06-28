@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_menu"
+    tools:context="com.example.pc02.myapplication.MainActivity">
+
+    <ImageView
+        android:id="@+id/rtt1"
+        android:layout_width="342dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="420dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/r_menu"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="21dp" />
+
+    <ImageView
+        android:id="@+id/gtt1"
+        android:layout_width="340dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="330dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/g_menu"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <ImageView
+        android:id="@+id/vtt1"
+        android:layout_width="340dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="240dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/v_menu"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+</android.support.constraint.ConstraintLayout>

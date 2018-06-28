@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pc02.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/bticon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Splash_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".List_ReadActivity" />
+        <activity android:name=".List_GameActivity" />
+        <activity android:name=".List_VideoActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_payunchana" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_saraActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_abcActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_numActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_dayActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_monthActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_colActivity" />
+        <activity android:name=".Adapter2.OtherGridviewManager.r_shapeActivity" />
+        <activity android:name=".GAME.GamePayunchana_Activity" />
+        <activity
+            android:name=".VIDEO.v_abcActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_payunchanaActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_colActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_dayActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_monthActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_numActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_saraActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VIDEO.v_shapeActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".GAME.HighestScore_Payunchana_Activity" />
+        <activity android:name=".GAME.GameSara_Activity" />
+        <activity android:name=".GAME.GameAbc_Activity" />
+        <activity android:name=".GAME.GameNum_Activity" />
+        <activity android:name=".GAME.GameDay_Activity" />
+        <activity android:name=".GAME.GameMonth_Activity" />
+        <activity android:name=".GAME.GameColor_Activity" />
+        <activity android:name=".GAME.GameShape_Activity" />
+        <activity android:name=".GAME.HighestScore_Abc_Activity" />
+        <activity android:name=".GAME.HighestScore_Day_Activity" />
+        <activity android:name=".GAME.HighestScore_Month_Activity" />
+        <activity android:name=".GAME.HighestScore_Num_Activity" />
+        <activity android:name=".GAME.HighestScore_Sara_Activity" />
+        <activity android:name=".GAME.HighestScore_Shape_Activity" />
+        <activity android:name=".GAME.HighestScore_Color_Activity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".VIDEO.Thank_Activity" />
+        <activity android:name=".VIDEO.CreditActivity"></activity>
+    </application>
+
+</manifest>
