@@ -3,6 +3,7 @@ package com.example.pc02.myapplication.GAME;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class GameColor_Activity extends AppCompatActivity implements View.OnClic
     TextView mScoreView,mQuizLength;
     ImageView imvQuestion;
     Button btn1,btn2,btn3,btn4;
+    MediaPlayer mediaPlayer;
 
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0;  // current total score
@@ -64,6 +66,10 @@ public class GameColor_Activity extends AppCompatActivity implements View.OnClic
         setQuestionView();
         updateScore(mScore);
 
+        //new
+        onClickQuiz_Pic();
+        //new
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,8 +81,6 @@ public class GameColor_Activity extends AppCompatActivity implements View.OnClic
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(GameColor_Activity.this, List_GameActivity.class);
-                startActivity(home);
                 finish();
             }
         });
@@ -93,6 +97,11 @@ public class GameColor_Activity extends AppCompatActivity implements View.OnClic
             Drawable drawable = res.getDrawable(resID );
 
             imvQuestion.setImageDrawable(drawable );
+            String sound_paths = mquestionBank.getSound(mQuestionNumber);
+            //NEW
+            imvQuestion.setTag(sound_paths);
+            //NEW
+
             mAnswer = mquestionBank.getCorrectAnswer(mQuestionNumber);
             btn1.setText(mquestionBank.getChoice(mQuestionNumber,1));
             btn2.setText(mquestionBank.getChoice(mQuestionNumber,2));
@@ -133,4 +142,24 @@ public class GameColor_Activity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    private void onClickQuiz_Pic() {
+        imvQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sound_path = view.findViewById(R.id.imvQuiz).getTag().toString();
+
+                Resources res = imvQuestion.getResources();
+                int soundQuiz = res.getIdentifier(sound_path,"raw",getPackageName());
+                mediaPlayer = MediaPlayer.create(view.getContext(), soundQuiz);
+
+                mediaPlayer.start();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

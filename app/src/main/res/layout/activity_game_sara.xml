@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     android:orientation="vertical"
     android:weightSum="4"
-    android:background="@color/blue"
     tools:context=".GAME.GameSara_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
         android:background="@color/green"
-        android:weightSum="2"
-        android:layout_marginBottom="5dp">
+        android:weightSum="2">
 
         <ImageView
             android:id="@+id/btBack"
@@ -34,47 +34,51 @@
             android:layout_marginLeft="140dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:src="@drawable/bthome"/>
+            android:src="@drawable/bthome" />
     </LinearLayout>
 
     <LinearLayout
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ข้อที่ : "
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
+
         <TextView
             android:id="@+id/tvQuizLength"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/scoreBoard"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="คะแนนที่ได้ : "
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
+
         <TextView
             android:id="@+id/tvshowScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
     </LinearLayout>
+
+
 
     <ImageView
         android:id="@+id/imvQuiz"
@@ -82,20 +86,36 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:layout_weight="2"
-        android:scaleType="fitXY"
-        android:padding="20dp" />
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_voice" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="center"
+        android:text="นี่คือเสียงของสระในภาษาไทยตัวใด ?"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:background="@color/white"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnAns1"
@@ -103,21 +123,22 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="ans1"
-                android:textSize="25dp"/>
+                android:textSize="25dp" />
+
             <Button
                 android:id="@+id/btnAns2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="ans2"
-                android:textSize="25dp"/>
+                android:textSize="25dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/btnAns3"
@@ -125,14 +146,15 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="ans3"
-                android:textSize="25dp"/>
+                android:textSize="25dp" />
+
             <Button
                 android:id="@+id/btnAns4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="ans4"
-                android:textSize="25dp"/>
+                android:textSize="25dp" />
 
         </LinearLayout>
     </LinearLayout>

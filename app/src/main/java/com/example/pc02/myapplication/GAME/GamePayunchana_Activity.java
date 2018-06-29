@@ -3,6 +3,7 @@ package com.example.pc02.myapplication.GAME;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class GamePayunchana_Activity extends AppCompatActivity implements View.O
     TextView mScoreView,mQuizLength;
     ImageView  imvQuestion;
     Button btn1,btn2,btn3,btn4;
+    MediaPlayer mediaPlayer;
 
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0;  // current total score
@@ -66,6 +68,10 @@ public class GamePayunchana_Activity extends AppCompatActivity implements View.O
         setQuestionView();
         updateScore(mScore);
 
+        //new
+        onClickQuiz_Pic();
+        //new
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,8 +83,6 @@ public class GamePayunchana_Activity extends AppCompatActivity implements View.O
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(GamePayunchana_Activity.this, List_GameActivity.class);
-                startActivity(home);
                 finish();
             }
         });
@@ -95,6 +99,11 @@ public class GamePayunchana_Activity extends AppCompatActivity implements View.O
             Drawable drawable = res.getDrawable(resID );
 
             imvQuestion.setImageDrawable(drawable );
+            //NEW
+            String sound_paths = mquestionBank.getSound(mQuestionNumber);
+            imvQuestion.setTag(sound_paths);
+            //NEW
+
             mAnswer = mquestionBank.getCorrectAnswer(mQuestionNumber);
             btn1.setText(mquestionBank.getChoice(mQuestionNumber,1));
             btn2.setText(mquestionBank.getChoice(mQuestionNumber,2));
@@ -133,5 +142,20 @@ public class GamePayunchana_Activity extends AppCompatActivity implements View.O
             updateScore(mScore);
             setQuestionView();
         }
+    }
+
+    private void onClickQuiz_Pic() {
+        imvQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sound_path = view.findViewById(R.id.imvQuiz).getTag().toString();
+
+                Resources res = imvQuestion.getResources();
+                int soundQuiz = res.getIdentifier(sound_path,"raw",getPackageName());
+                mediaPlayer = MediaPlayer.create(view.getContext(), soundQuiz);
+
+                mediaPlayer.start();
+            }
+        });
     }
 }

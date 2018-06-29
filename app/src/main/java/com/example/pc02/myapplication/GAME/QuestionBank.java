@@ -32,7 +32,11 @@ public class QuestionBank {
     public String getCorrectAnswer(int a) {
         return list.get(a).getANSWER(); //  method returns correct answer for the question based on list index
     }
-
+    //NEW
+    public String getSound(int a) {
+        return list.get(a).getQuiz_sound();
+    }
+    //NEW
 
     // pull data from db
     public void initQuestions(Context context) {

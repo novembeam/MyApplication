@@ -72,11 +72,14 @@ public class List_GameActivity extends Activity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onbackPressed();
                 finish();
             }
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }
